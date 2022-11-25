@@ -1,0 +1,86 @@
+[
+    {
+        "name": "Rico",
+        "tags": ["hypoallergenic","friendly","playful"],
+        "age": 2,
+        "price": 6,
+        "image": "images/rico.png"
+    },
+    {
+        "name": "Humphry",
+        "tags": ["solitary","adventurous"],
+        "age": 9,
+        "price": 17,
+        "image": "images/humphry.png"
+    },
+    {
+        "name": "Pubert",
+        "tags": ["kitten","enigma","untrained"],
+        "age": 0,
+        "price": 10,
+        "image": "images/pubert.png"
+    },
+    {
+        "name": "Huron",
+        "tags": ["friendly","lazy"],
+        "age": 6,
+        "price": 5,
+        "image": "images/huron.png"
+    },
+    {
+        "name": "James",
+        "tags": ["hypoallergenic","wise","adventurous"],
+        "age": 12,
+        "price": 12,
+        "image": "images/james.png"
+    },
+    {
+        "name": "Shaq",
+        "tags": ["active","adventurous","playful","baskingball"],
+        "age": 50,
+        "price": 19,
+        "image": "images/shaq.png"
+    },
+    {
+        "name": "Gimble",
+        "tags": ["friendly","trusting"],
+        "age": 5,
+        "price": 8,
+        "image": "images/gimble.png"
+    },
+    {
+        "name": "Mateo",
+        "tags": ["hypoallergenic","friendly","affectionate"],
+        "age": 8,
+        "price": 7,
+        "image": "images/mateo.png"
+    },
+    {
+        "name": "Garfunkle",
+        "tags": ["miserly","hostile"],
+        "age": 20,
+        "price": 0,
+        "image": "images/garfunkle.png"
+    },
+    {
+        "name": "Charles",
+        "tags": ["hypoallergenic","lazy","untrained"],
+        "age": 4,
+        "price": 3,
+        "image": "images/charles.png"
+    },
+    {
+        "name": "Norbert",
+        "tags": ["kitten","friendly","untrained"],
+        "age": 1,
+        "price": 4,
+        "image": "images/norbert.png"
+    },
+    {
+        "name": "Thurman",
+        "tags": ["miserly","dapper","solitary"],
+        "age": 15,
+        "price": 9,
+        "image": "images/thurman.png"
+    }
+]

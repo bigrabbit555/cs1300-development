@@ -1,0 +1,21 @@
+img {
+    max-width: 100%;
+    max-height: 75%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+
+.kittyItem {
+    border: 2px solid black;
+    padding: 1rem;
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 400px;
+    text-align: center;
+}
+
+p {
+    margin: .2rem;
+}
