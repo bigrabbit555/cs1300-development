@@ -29,32 +29,41 @@ function TopBar(props) {
 
     return (
         <div className='TopBar'>
-            <div className='Row'>
-                <p>
-                    Min price:
-                    <input type="text" onChange={handleMinPriceChange}/>
-                </p>
-                <p>
-                    Max price:
-                    <input type="text" onChange={handleMaxPriceChange}/>
-                </p>
-                <button onClick={() => {props.activatePriceFilter(minPrice, maxPrice)}}>Filter by price</button>
-                <button onClick={() => {props.clearPriceFilter()}}>Clear price filter</button> 
+            <div className='Category'>
+                <h2>Filter</h2>
+                <div className='Row'>
+                    <p>
+                        Min price:
+                        <input type="text" onChange={handleMinPriceChange}/>
+                    </p>
+                    <p>
+                        Max price:
+                        <input type="text" onChange={handleMaxPriceChange}/>
+                    </p>
+                    <button onClick={() => {props.activatePriceFilter(minPrice, maxPrice)}}>Filter by price</button>
+                    <button onClick={() => {props.clearPriceFilter()}}>Clear price filter</button> 
+                </div>
+                <div className='Row'>
+                    <p>
+                        Min age:
+                        <input type="text" onChange={handleMinAgeChange}/>
+                    </p>
+                    <p>
+                        Max age:
+                        <input type="text" onChange={handleMaxAgeChange}/>
+                    </p>
+                    <button onClick={() => {props.activateAgeFilter(minAge, maxAge)}}>Filter by age</button>
+                    <button onClick={() => {props.clearAgeFilter()}}>Clear age filter</button> 
+                </div>
+                <div className='Row'>
+                    <button onClick={() => {props.clearAllFilters()}}>Clear all filters</button>
+                </div>
             </div>
-            <div className='Row'>
-                <p>
-                    Min age:
-                    <input type="text" onChange={handleMinAgeChange}/>
-                </p>
-                <p>
-                    Max age:
-                    <input type="text" onChange={handleMaxAgeChange}/>
-                </p>
-                <button onClick={() => {props.activateAgeFilter(minAge, maxAge)}}>Filter by age</button>
-                <button onClick={() => {props.clearAgeFilter()}}>Clear age filter</button> 
-            </div>
-            <div className='Row'>
-                <button onClick={() => {props.clearAllFilters()}}>Clear all filters</button>
+            <div className='Category'>
+                <h2>Sort</h2>
+                <button onClick={() => {props.activateAscendingPrice()}}>Ascending price</button>
+                <button onClick={() => {props.activateDescendingPrice()}}>Descending price</button>
+                <button onClick={() => {props.clearSorts()}}>Clear price sort</button>
             </div>
         </div>
     );

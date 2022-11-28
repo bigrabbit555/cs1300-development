@@ -14,6 +14,7 @@ img {
     justify-content: flex-end;
     width: 400px;
     text-align: center;
+    background-color: rgb(216, 216, 216);
 }
 
 p {

@@ -11,7 +11,7 @@ function App() {
   // ----------------------------------------------------------------------------------------------------------
   // Cart and aggregator stuff
   const [cart, setCart] = useState({});
-  const [totalPrice, setTotalPrice] = useState(0);
+  const [totalPrice, setTotalPrice] = useState(Number(0).toFixed(2));
   const [costs, setCosts] = useState({});
 
   const addToCart = (name, price) => {
@@ -94,6 +94,24 @@ function App() {
 
   // ----------------------------------------------------------------------------------------------------------
   // Sorting stuff
+  const [priceSortActive, setPriceSortActive] = useState(false);
+  const [priceSortAscending, setPriceSortAscending] = useState(true);  // true for ascending, false for descending
+
+  const clearAllSorts = () => {
+    setPriceSortActive(false);
+    // console.log("clearing");
+    // console.log(priceSortActive);
+  }
+
+  const activateAscendingPrice = () => {
+    setPriceSortActive(true);
+    setPriceSortAscending(true);
+  }
+
+  const activateDescendingPrice = () => {
+    setPriceSortActive(true);
+    setPriceSortAscending(false);
+  }
 
 
   return (
@@ -107,7 +125,10 @@ function App() {
         clearPriceFilter={deactivatePriceFilter}
         activateAgeFilter={activateAgeFilter}
         clearAgeFilter={deactivateAgeFilter}
-        clearAllFilters={clearAllFilters}/>
+        clearAllFilters={clearAllFilters}
+        activateAscendingPrice={activateAscendingPrice}
+        activateDescendingPrice={activateDescendingPrice}
+        clearSorts={clearAllSorts}/>
       <KittyDisplay
         data={kittyData}
         addToCart={addToCart}
@@ -116,8 +137,14 @@ function App() {
         priceMax={priceFilterMax}
         ageFilterOn={ageFilterActive}
         ageMax={ageFilterMax}
-        ageMin={ageFilterMin}/>
-      <Cart cart={cart} totalPrice={totalPrice} delete={removeFromCart} emptyCart={() => {setCart({}); setTotalPrice(0)}}/>
+        ageMin={ageFilterMin}
+        priceSort={priceSortActive}
+        priceAscending={priceSortAscending}/>
+      <Cart
+        cart={cart}
+        totalPrice={totalPrice}
+        delete={removeFromCart}
+        emptyCart={() => {setCart({}); setTotalPrice(Number(0).toFixed(2))}}/>
     </div>
   );
 }

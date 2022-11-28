@@ -2,9 +2,34 @@
     display: flex;
     width: 100%;
     justify-content: flex-start;
-    flex-direction: column; 
+    margin-bottom: 1rem;
 }
+
+.Category {
+    display: flex;
+    flex-direction: column;
+    margin: 0 2rem 0 2rem;
+}
+
+.Category * {
+    margin: 5px 0 5px 0;
+}
+
+/* 
+.Filter {
+    display: flex;
+    flex-direction: column;
+}
+
+.Sort {
+    display: flex;
+    flex-direction: column;
+} */
 
 .Row {
     display: flex;
+}
+
+.Row * {
+    margin: 0 5px 0 5px;
 }

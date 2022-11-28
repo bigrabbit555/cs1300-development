@@ -2,21 +2,34 @@ import './KittyDisplay.css';
 import KittyItem from './KittyItem';
 
 function KittyDisplay(props) {
-    let mData = props.data;
-    // console.log(props.data);
-    // console.log(Array.isArray(props.data));
-    // console.log(mData);
-    // console.log(Array.isArray(mData));
-    if (props.priceFilterOn) {
-        console.log("Filtering!");
-        mData = mData.filter(kitty => kitty.price >= props.priceMin && kitty.price <= props.priceMax);
-    }
+    let mData = [];
 
-    if (props.ageFilterOn) {
-        mData = mData.filter(kitty => kitty.age >= props.ageMin && kitty.age <= props.ageMax);
+    // Do filtering as needed
+    const filterFunc = (kitty) => {
+        let ret = true;
+        if (ret && props.priceFilterOn) ret = kitty.price >= props.priceMin && kitty.price <= props.priceMax;
+        if (ret && props.ageFilterOn) ret = kitty.age >= props.ageMin && kitty.age <= props.ageMax;
+        return ret;
     }
-    // console.log(mData);
-    
+    mData = props.data.filter(filterFunc);
+     
+
+     
+    // Do sorting as needed
+    if (props.priceSort) {
+        if (props.priceAscending) {
+            mData = mData.sort((a, b) => { return a.price - b.price });
+        } else {
+            mData = mData.sort((a, b) => { return b.price - a.price });
+        }
+    } 
+    // else {
+    //     mData = mData;
+    //     console.log("womba bomba");
+    // }
+
+    console.log("oo ee oo ah ah ting tang walla walla bing bang");
+
     return (
         <div className='KittyDisplay'>
             {mData.map((item, index) => (
