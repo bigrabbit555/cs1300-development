@@ -57,17 +57,14 @@ function App() {
   const [priceFilterMax, setPriceFilterMax] = useState(Infinity);
 
   const activatePriceFilter = (min, max) => {
-    console.log(min, max);
-    console.log("price filter activating");
     setPriceFilterActive(true);
     setPriceFilterMin(min);
     setPriceFilterMax(max);
   }
 
-  const deactivatePriceFilter = () => {
-    // console.log("price filter deactivating");
-    setPriceFilterActive(false);
-  }
+  // const deactivatePriceFilter = () => {
+  //   setPriceFilterActive(false);
+  // }
 
   // Age filtering
   const [ageFilterActive, setAgeFilterActive] = useState(false);
@@ -75,21 +72,28 @@ function App() {
   const [ageFilterMax, setAgeFilterMax] = useState(Infinity);
 
   const activateAgeFilter = (min, max) => {
-    console.log(min, max);
-    console.log("age filter activating");
     setAgeFilterActive(true);
     setAgeFilterMin(min);
     setAgeFilterMax(max);
   }
 
-  const deactivateAgeFilter = () => {
-    // console.log("age filter deactivating");
-    setAgeFilterActive(false);
-  }
+  // const deactivateAgeFilter = () => {
+  //   setAgeFilterActive(false);
+  // }
 
   const clearAllFilters = () => {
     setPriceFilterActive(false);
     setAgeFilterActive(false);
+    setTagsFilterActive(false);
+  }
+
+  // Tags filtering
+  const [tagsFilterActive, setTagsFilterActive] = useState(false);
+  const [tags, setTags] = useState([]);
+  
+  const activateTagsFilter = (mTags) => {
+    setTags(mTags);
+    setTagsFilterActive(true);
   }
 
   // ----------------------------------------------------------------------------------------------------------
@@ -99,8 +103,6 @@ function App() {
 
   const clearAllSorts = () => {
     setPriceSortActive(false);
-    // console.log("clearing");
-    // console.log(priceSortActive);
   }
 
   const activateAscendingPrice = () => {
@@ -122,9 +124,11 @@ function App() {
         priceMin={priceFilterMin}
         priceMax={priceFilterMax}
         activatePriceFilter={activatePriceFilter}
-        clearPriceFilter={deactivatePriceFilter}
+        clearPriceFilter={() => {setPriceFilterActive(false)}}
         activateAgeFilter={activateAgeFilter}
-        clearAgeFilter={deactivateAgeFilter}
+        clearAgeFilter={() => {setAgeFilterActive(false)}}
+        activateTagsFilter={activateTagsFilter}
+        clearTagsFilter={() => {setTagsFilterActive(false)}}
         clearAllFilters={clearAllFilters}
         activateAscendingPrice={activateAscendingPrice}
         activateDescendingPrice={activateDescendingPrice}
@@ -138,6 +142,8 @@ function App() {
         ageFilterOn={ageFilterActive}
         ageMax={ageFilterMax}
         ageMin={ageFilterMin}
+        tagsFilterOn={tagsFilterActive}
+        tagsSelected={tags}
         priceSort={priceSortActive}
         priceAscending={priceSortAscending}/>
       <Cart

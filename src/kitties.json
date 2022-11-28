@@ -82,5 +82,12 @@
         "age": 15,
         "price": 9,
         "image": "images/thurman.png"
+    },
+    {
+        "name": "Dino",
+        "tags": ["enigma", "untrained", "lazy"],
+        "age": 13,
+        "price": 7,
+        "image": "images/dino.png"
     }
 ]

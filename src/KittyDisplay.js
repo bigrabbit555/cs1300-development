@@ -9,6 +9,13 @@ function KittyDisplay(props) {
         let ret = true;
         if (ret && props.priceFilterOn) ret = kitty.price >= props.priceMin && kitty.price <= props.priceMax;
         if (ret && props.ageFilterOn) ret = kitty.age >= props.ageMin && kitty.age <= props.ageMax;
+        if (ret && props.tagsFilterOn) {
+            console.log(props.tagsSelected)
+            for (let t in props.tagsSelected) {
+                console.log(t + " is not included in " + props.tagsSelected);
+                if (!kitty.tags.includes(props.tagsSelected[t])) ret = false;
+            }
+        }
         return ret;
     }
     mData = props.data.filter(filterFunc);

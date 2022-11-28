@@ -5,29 +5,39 @@
     margin-bottom: 1rem;
 }
 
-.Category {
+/* .Category {
     display: flex;
     flex-direction: column;
     margin: 0 2rem 0 2rem;
-}
+    width: 100%;
+} */
 
-.Category * {
+.Sort *, .Filter * {
     margin: 5px 0 5px 0;
 }
 
-/* 
+.tagHolder {
+    display: flex;
+    /* max-width: 50%; */
+    flex-wrap: wrap;
+}
+
 .Filter {
     display: flex;
     flex-direction: column;
+    margin: 0 2rem 0 2rem;
+    max-width: 50%
 }
 
 .Sort {
     display: flex;
     flex-direction: column;
-} */
+    margin: 0 2rem 0 4rem;
+}
 
 .Row {
     display: flex;
+    max-width: 100%;
 }
 
 .Row * {
